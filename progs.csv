@@ -1,0 +1,47 @@
+tag,Name in Repo,Purpose(word or phrase to sound right installing)
+,xorg-xserver,is the graphical server. 
+,xorg-xwininfo,allows collecting window information. 
+,xorg-xinit,starts the graphical server.
+,ttf-ubuntu-font-family,the only good thing from Ubuntu.
+,lf,is a terminal file manager.
+,xcompmgr,is the compositing manager.
+,xorg-xprop,is a tool for displaying window porperties.
+,arandr,makes multi monitor setup easy.
+,dosfstool,is the notification system backend. 
+,libnotify,is the notification system backend. 
+,dunst,"is the suckless notification system,"
+,exfat-utils,allows FAT file system compatibility. 
+,feh,is a minimal image viewer.
+,xwallpaper,sets the wallpaper.
+,ffmpeg,is the amazing audio multi-tool.
+,vim,is the system editor.
+,mpv,simply the best media player.
+,cmus,an Ncurses based media player. 
+,man-db,lets you read the manual database.
+,newsboat,is a terminal RSS client.
+A,brave-bin,is the systems web browser.
+,noto-fonts-emoji,is an emoji font.
+,ntfs-3g,give NTFS compatibility.
+,pulseaudio-alsa,is the audio system.
+,pulsemixer,is an audio controller.
+A,sc-im,a terminal spreadsheet manager.
+,maim,is for taking screenshots.
+,unclutter,hides the mouse cursor. 
+,unrar,extracts rar files.
+,unzip,extracts zip files.
+,w3m,is a terminal web browser.
+,xclip,allows for copying and pasting from the cli.
+,xdotool,provides window action utilities on the command line. 
+,xorg-xdpyinfo,aid with resoltion determination and screen recording.
+,youtube-dl,can download videos from many sites. 
+,zathura,is a pdf viewr with vim-like bindings. 
+,zathura-pdf-mupdf,allows pdf compatbility in zathura.
+,zathura-djvu,allows djvu compatibility in zathura.
+,zathura-cb,allows comicbook file compatibility in zathura
+,mediainfo,shows audio and video information. 
+,atool,manages and gives information about archives. 
+,fzf,is a fuzzy finder tool.
+,xorg-xbacklight,allows adjusting screen brightness.
+,slock,allows locking of desktop session.
+,socat,is a utility which establishes two byte streams and transfers data between them.
+,moreutils,is a collection of unix tools.
