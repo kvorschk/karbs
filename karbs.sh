@@ -229,11 +229,11 @@ git update-index --assume-unchanged "/home/$name/README.md"
 systembeepoff
 
 # Make zsh the default shell for the user.
-chsh -s /bin/bash "$name" >/dev/null 2>&1
-sudo -u "$name" mkdir -p "/home/$name/.cache/bash/"
+# chsh -s /bin/bash "$name" >/dev/null 2>&1
+# sudo -u "$name" mkdir -p "/home/$name/.cache/bash/"
 
 # dbus UUID must be generated for Artix runit.
-dbus-uuidgen > /var/lib/dbus/machine-id
+# dbus-uuidgen > /var/lib/dbus/machine-id
 
 # Use system notifications for Brave on Artix
 echo "export \$(dbus-launch)" > /etc/profile.d/dbus.sh
