@@ -16,7 +16,7 @@ while getopts ":a:r:b:p:h" o; do case "${o}" in
 esac done
 
 [ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/kvorschk/dots.git"
-[ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/LukeSmithxyz/LARBS/master/progs.csv"
+[ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/kvorschk/karbs/master/progs.csv"
 [ -z "$aurhelper" ] && aurhelper="yay"
 [ -z "$repobranch" ] && repobranch="master"
 
@@ -27,16 +27,16 @@ installpkg(){ pacman --noconfirm --needed -S "$1" >/dev/null 2>&1 ;}
 error() { printf "%s\n" "$1" >&2; exit 1; }
 
 welcomemsg() { \
-	dialog --title "Welcome!" --msgbox "Welcome to Luke's Auto-Rice Bootstrapping Script!\\n\\nThis script will automatically install a fully-featured Linux desktop, which I use as my main machine.\\n\\n-Luke" 10 60
+	dialog --title "Welcome!" --msgbox "Welcome to Kvorshk's Auto-Rice Bootstrapping Script!\\n\\nThis script will automatically install a fully-featured, minimal Linux desktop.\\n\\n-Kvorshk" 10 60
 
-	dialog --colors --title "Important Note!" --yes-label "All ready!" --no-label "Return..." --yesno "Be sure the computer you are using has current pacman updates and refreshed Arch keyrings.\\n\\nIf it does not, the installation of some programs might fail." 8 70
+	dialog --colors --title "Important!" --yes-label "Lets Go!" --no-label "Return..." --yesno "Be sure pacman is updated and the keyring has been refreshed.\\n\\nIf not, things might break." 8 70
 	}
 
 getuserandpass() { \
-	# Prompts user for new username an password.
-	name=$(dialog --inputbox "First, please enter a name for the user account." 10 60 3>&1 1>&2 2>&3 3>&1) || exit 1
+	# Demands username an password from user.
+	name=$(dialog --inputbox "Enter a name for the user account!" 10 60 3>&1 1>&2 2>&3 3>&1) || exit 1
 	while ! echo "$name" | grep -q "^[a-z_][a-z0-9_-]*$"; do
-		name=$(dialog --no-cancel --inputbox "Username not valid. Give a username beginning with a letter, with only lowercase letters, - or _." 10 60 3>&1 1>&2 2>&3 3>&1)
+		name=$(dialog --no-cancel --inputbox "Username not valid. Give a username beginning with a letter, with only lowercase letters, - or _ !" 10 60 3>&1 1>&2 2>&3 3>&1)
 	done
 	pass1=$(dialog --no-cancel --passwordbox "Enter a password for that user." 10 60 3>&1 1>&2 2>&3 3>&1)
 	pass2=$(dialog --no-cancel --passwordbox "Retype password." 10 60 3>&1 1>&2 2>&3 3>&1)
@@ -48,11 +48,11 @@ getuserandpass() { \
 
 usercheck() { \
 	! { id -u "$name" >/dev/null 2>&1; } ||
-	dialog --colors --title "WARNING!" --yes-label "CONTINUE" --no-label "No wait..." --yesno "The user \`$name\` already exists on this system. LARBS can install for a user already existing, but it will \\Zboverwrite\\Zn any conflicting settings/dotfiles on the user account.\\n\\nLARBS will \\Zbnot\\Zn overwrite your user files, documents, videos, etc., so don't worry about that, but only click <CONTINUE> if you don't mind your settings being overwritten.\\n\\nNote also that LARBS will change $name's password to the one you just gave." 14 70
+	dialog --colors --title "WARNING!" --yes-label "CONTINUE" --no-label "No wait..." --yesno "The user \`$name\` already exists on this system. KARBS can install for a user already existing, but it will \\Zboverwrite\\Zn any conflicting settings/dotfiles on the user account.\\n\\nKARBS will \\Zbnot\\Zn overwrite your user files, documents, videos, etc., so don't worry about that, but only click <CONTINUE> if you don't mind your settings being overwritten.\\n\\nNote also that KARBS will change $name's password to the one you just gave." 14 70
 	}
 
 preinstallmsg() { \
-	dialog --title "Let's get this party started!" --yes-label "Let's go!" --no-label "No, nevermind!" --yesno "The rest of the installation will now be totally automated, so you can sit back and relax.\\n\\nIt will take some time, but when done, you can relax even more with your complete system.\\n\\nNow just press <Let's go!> and the system will begin installation!" 13 60 || { clear; exit 1; }
+	dialog --title "Hold on to your butts!" --yes-label "Let's go!" --no-label "No, nevermind!" --yesno "The rest of the installation will now be totally automated, so you can sit back and relax.\\n\\nIt will take some time, but when done, you can relax even more with your complete system.\\n\\nNow just press <Let's go!> and the system will begin installation!" 13 60 || { clear; exit 1; }
 	}
 
 adduserandpass() { \
@@ -83,8 +83,8 @@ Include = /etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf
 	esac ;}
 
 newperms() { # Set special sudoers settings for install (or after).
-	sed -i "/#LARBS/d" /etc/sudoers
-	echo "$* #LARBS" >> /etc/sudoers ;}
+	sed -i "/#KARBS/d" /etc/sudoers
+	echo "$* #KARBS" >> /etc/sudoers ;}
 
 manualinstall() { # Installs $1 manually. Used only for AUR helper here.
 	# Should be run after repodir is created and var is set.
@@ -97,14 +97,14 @@ manualinstall() { # Installs $1 manually. Used only for AUR helper here.
 }
 
 maininstall() { # Installs all needed programs from main repo.
-	dialog --title "LARBS Installation" --infobox "Installing \`$1\` ($n of $total). $1 $2" 5 70
+	dialog --title "KARBS Installation" --infobox "Installing \`$1\` ($n of $total). $1 $2" 5 70
 	installpkg "$1"
 	}
 
 gitmakeinstall() {
 	progname="$(basename "$1" .git)"
 	dir="$repodir/$progname"
-	dialog --title "LARBS Installation" --infobox "Installing \`$progname\` ($n of $total) via \`git\` and \`make\`. $(basename "$1") $2" 5 70
+	dialog --title "KARBS Installation" --infobox "Installing \`$progname\` ($n of $total) via \`git\` and \`make\`. $(basename "$1") $2" 5 70
 	sudo -u "$name" git clone --depth 1 "$1" "$dir" >/dev/null 2>&1 || { cd "$dir" || return 1 ; sudo -u "$name" git pull --force origin master;}
 	cd "$dir" || exit 1
 	make >/dev/null 2>&1
@@ -112,13 +112,13 @@ gitmakeinstall() {
 	cd /tmp || return 1 ;}
 
 aurinstall() { \
-	dialog --title "LARBS Installation" --infobox "Installing \`$1\` ($n of $total) from the AUR. $1 $2" 5 70
+	dialog --title "KARBS Installation" --infobox "Installing \`$1\` ($n of $total) from the AUR. $1 $2" 5 70
 	echo "$aurinstalled" | grep -q "^$1$" && return 1
 	sudo -u "$name" $aurhelper -S --noconfirm "$1" >/dev/null 2>&1
 	}
 
 pipinstall() { \
-	dialog --title "LARBS Installation" --infobox "Installing the Python package \`$1\` ($n of $total). $1 $2" 5 70
+	dialog --title "KARBS Installation" --infobox "Installing the Python package \`$1\` ($n of $total). $1 $2" 5 70
 	[ -x "$(command -v "pip")" ] || installpkg python-pip >/dev/null 2>&1
 	yes | pip install "$1"
 	}
@@ -182,11 +182,11 @@ preinstallmsg || error "User exited."
 refreshkeys || error "Error automatically refreshing Arch keyring. Consider doing so manually."
 
 for x in curl ca-certificates base-devel git ntp zsh ; do
-	dialog --title "LARBS Installation" --infobox "Installing \`$x\` which is required to install and configure other programs." 5 70
+	dialog --title "KARBS Installation" --infobox "Installing \`$x\` which is required to install and configure other programs." 5 70
 	installpkg "$x"
 done
 
-dialog --title "LARBS Installation" --infobox "Synchronizing system time to ensure successful and secure installation of software..." 4 70
+dialog --title "KARBS Installation" --infobox "Synchronizing system time to ensure successful and secure installation of software..." 4 70
 ntpdate 0.us.pool.ntp.org >/dev/null 2>&1
 
 adduserandpass || error "Error adding username and/or password."
@@ -212,26 +212,25 @@ manualinstall yay-bin || error "Failed to install AUR helper."
 # and all build dependencies are installed.
 installationloop
 
-dialog --title "LARBS Installation" --infobox "Finally, installing \`libxft-bgra\` to enable color emoji in suckless software without crashes." 5 70
+dialog --title "KARBS Installation" --infobox "Finally, installing \`libxft-bgra\` to enable color emoji in suckless software without crashes." 5 70
 yes | sudo -u "$name" $aurhelper -S libxft-bgra-git >/dev/null 2>&1
 
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
 rm -f "/home/$name/README.md" "/home/$name/LICENSE" "/home/$name/FUNDING.yml"
 # Create default urls file if none exists.
-[ ! -f "/home/$name/.config/newsboat/urls" ] && echo "http://lukesmith.xyz/rss.xml
-https://notrelated.libsyn.com/rss
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA \"~Luke Smith (YouTube)\"
-https://www.archlinux.org/feeds/news/" > "/home/$name/.config/newsboat/urls"
+[ ! -f "/home/$name/.config/newsboat/urls" ] && echo"https://www.archlinux.org/feeds/news/" > "/home/$name/.config/newsboat/urls"
 # make git ignore deleted LICENSE & README.md files
-git update-index --assume-unchanged "/home/$name/README.md" "/home/$name/LICENSE" "/home/$name/FUNDING.yml"
+git update-index --assume-unchanged "/home/$name/README.md" 
+#"/home/$name/LICENSE" 
+#"/home/$name/FUNDING.yml"
 
 # Most important command! Get rid of the beep!
 systembeepoff
 
 # Make zsh the default shell for the user.
-chsh -s /bin/zsh "$name" >/dev/null 2>&1
-sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
+chsh -s /bin/bash "$name" >/dev/null 2>&1
+sudo -u "$name" mkdir -p "/home/$name/.cache/bash/"
 
 # dbus UUID must be generated for Artix runit.
 dbus-uuidgen > /var/lib/dbus/machine-id
@@ -258,7 +257,7 @@ pkill -15 -x 'pulseaudio'; sudo -u "$name" pulseaudio --start
 
 # This line, overwriting the `newperms` command above will allow the user to run
 # serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
-newperms "%wheel ALL=(ALL) ALL #LARBS
+newperms "%wheel ALL=(ALL) ALL #KARBS
 %wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/paru,/usr/bin/pacman -Syyuw --noconfirm"
 
 # Last message! Install complete!
