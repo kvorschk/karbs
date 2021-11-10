@@ -2,8 +2,16 @@ tag,Name in Repo,Purpose(word or phrase to sound right installing)
 ,xorg-xserver,is the graphical server. 
 ,xorg-xwininfo,allows collecting window information. 
 ,xorg-xinit,starts the graphical server.
+,i3-gaps
+,i3blocks
+,terminator,is the terminal.
+,neofetch
 ,ttf-ubuntu-font-family,the only good thing from Ubuntu.
 ,lf,is a terminal file manager.
+,thunar,is a graphical file manager.
+,thunar-archive-plugin
+,thunar-volman
+A,thunar-shares-plugin
 ,xcompmgr,is the compositing manager.
 ,xorg-xprop,is a tool for displaying window porperties.
 ,arandr,makes multi monitor setup easy.
