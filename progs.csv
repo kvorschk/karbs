@@ -10,9 +10,9 @@ tag,Name in Repo,Purpose(word or phrase to sound right installing)
 ,ttf-ubuntu-font-family,the only good thing from Ubuntu.
 A,lf-git,is a terminal file manager.
 ,thunar,is a graphical file manager.
-,thunar-archive-plugin
-,thunar-volman
-A,thunar-shares-plugin
+,thunar-archive-plugin,provides archive compatibility for thunar.
+,thunar-volman,allows thunar to mount removable file sytems.
+A,thunar-shares-plugin,allows non sudo file sharing from thunar.
 ,xcompmgr,is the compositing manager.
 ,xorg-xprop,is a tool for displaying window porperties.
 ,arandr,makes multi monitor setup easy.
@@ -33,6 +33,7 @@ A,brave-bin,is the systems web browser.
 ,ntfs-3g,give NTFS compatibility.
 ,pulseaudio-alsa,is the audio system.
 ,pulsemixer,is an audio controller.
+,pamixer,is a command line mixer for pulse.
 A,sc-im,a terminal spreadsheet manager.
 ,maim,is for taking screenshots.
 ,unclutter,hides the mouse cursor. 
@@ -54,3 +55,4 @@ A,sc-im,a terminal spreadsheet manager.
 ,slock,allows locking of desktop session.
 ,socat,is a utility which establishes two byte streams and transfers data between them.
 ,moreutils,is a collection of unix tools.
+A,gotop,is a terminal based activity monitor.
