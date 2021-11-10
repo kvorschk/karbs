@@ -1,5 +1,5 @@
 tag,Name in Repo,Purpose(word or phrase to sound right installing)
-,xorg-xserver,is the graphical server. 
+,xorg-server,is the graphical server. 
 ,xorg-xwininfo,allows collecting window information. 
 ,xorg-xinit,starts the graphical server.
 ,i3-gaps
