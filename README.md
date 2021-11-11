@@ -1,1 +1,5 @@
-# karbs
+KARBS is a fork of LARBS, Luke's Auto-Rice Bootstrapping Scripts. From the LARBS github page, "LARBS is a script that autoinstalls and autoconfigures a fully-functioning and minimal terminal-and-vim-based Arch Linuxenvironment. LARBS can be on a fresh install of Arch Linux or Artix Linux, and provides you with a fully configured diving-board for work or more customization." 
+
+KARBS does the same, only not as minimal and based on the i3 Window manager. LARBS is based on DWM from suckless, and is amazing. I suggest checking it out, as well as Luke's other endeavors. I love DWM and can say nothing bad about it. I just use i3. 
+
+I am doing this for two reasons. First is I am lazy and do not want to configure every machine I use. I like to tinker and that can be a lot on some days. Second is to learn. I have learned much from Luke Smith and thought that he could teach me more if I learned to make the modifications myself. I hope to continue to make KARBS more arch and soystemd centric, and to add a few things along the way. 
