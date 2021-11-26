@@ -5,6 +5,7 @@ tag,Name in Repo,Purpose(word or phrase to sound right installing)
 ,i3-gaps,is the window manager.
 ,i3blocks,provides the status bar.
 ,dmenu,is the suckless wonder tool!
+,xorg-xev,prints contents of x events.
 ,terminator,is the terminal.
 ,neofetch,shows useful system info.
 ,ttf-ubuntu-font-family,the only good thing from Ubuntu.
@@ -13,6 +14,7 @@ A,lf-git,is a terminal file manager.
 ,thunar-archive-plugin,provides archive compatibility for thunar.
 ,thunar-volman,allows thunar to mount removable file sytems.
 A,thunar-shares-plugin,allows non sudo file sharing from thunar.
+,gvfs-smb,provides the cifs backend.
 ,xcompmgr,is the compositing manager.
 ,xorg-xprop,is a tool for displaying window porperties.
 ,arandr,makes multi monitor setup easy.
