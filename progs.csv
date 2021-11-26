@@ -3,6 +3,7 @@ tag,Name in Repo,Purpose(word or phrase to sound right installing)
 ,xorg-xwininfo,allows collecting window information. 
 ,xorg-xinit,starts the graphical server.
 ,i3-gaps,is the window manager.
+,acpi,is the power manager.
 ,i3blocks,provides the status bar.
 ,dmenu,is the suckless wonder tool!
 ,xorg-xev,prints contents of x events.
