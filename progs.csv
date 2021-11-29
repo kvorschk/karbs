@@ -10,7 +10,7 @@ tag,Name in Repo,Purpose(word or phrase to sound right installing)
 ,terminator,is the terminal.
 ,neofetch,shows useful system info.
 ,ttf-ubuntu-font-family,the only good thing from Ubuntu.
-A,lf-git,is a terminal file manager.
+A,lf,is a terminal file manager.
 ,thunar,is a graphical file manager.
 ,thunar-archive-plugin,provides archive compatibility for thunar.
 ,thunar-volman,allows thunar to mount removable file sytems.
