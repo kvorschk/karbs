@@ -58,5 +58,7 @@ A,sc-im,a terminal spreadsheet manager.
 ,slock,allows locking of desktop session.
 ,socat,is a utility which establishes two byte streams and transfers data between them.
 ,moreutils,is a collection of unix tools.
+,	ueberzug,enables previews in the lf file manager.
+,polkit,manages user policies.
 A,gotop,is a terminal based activity monitor.
 A,davfs2,allows access of files on nextcloud server in Thunar.
