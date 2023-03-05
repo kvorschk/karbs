@@ -62,3 +62,4 @@ A,sc-im,a terminal spreadsheet manager.
 ,polkit,manages user policies.
 A,gotop,is a terminal based activity monitor.
 A,davfs2,allows access of files on nextcloud server in Thunar.
+A,slstatus,is a status monitor for window managers that use WM_NAME or stdin to fill the status bar.
