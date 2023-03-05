@@ -34,7 +34,7 @@ A,thunar-shares-plugin,allows non sudo file sharing from thunar.
 A,brave-bin,is the systems web browser.
 ,noto-fonts-emoji,is an emoji font.
 ,ntfs-3g,give NTFS compatibility.
-,pulseaudio-alsa,is the audio system.
+,pipewire-pulse,is the audio system.
 ,pulsemixer,is an audio controller.
 ,pamixer,is a command line mixer for pulse.
 A,sc-im,a terminal spreadsheet manager.
