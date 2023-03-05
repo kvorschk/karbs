@@ -68,3 +68,5 @@ A,thunar-nextcloud-plugin,allows you to integrate nextcloud access in to thunar.
 ,bluez,is the bluetooth system.
 ,bluez-utils,are utilities used by bluez.
 ,pasystray,is a pulse audio controller. 
+,starship,is a cool terminal prompt.
+,gnome-keyring,is the system keyring.
