@@ -64,3 +64,7 @@ A,gotop,is a terminal based activity monitor.
 A,davfs2,allows access of files on nextcloud server in Thunar.
 A,slstatus,is a status monitor for window managers that use WM_NAME or stdin to fill the status bar.
 A,thunar-nextcloud-plugin,allows you to integrate nextcloud access in to thunar.
+,blueman,is a bluetooth connection manager.
+,bluez,is the bluetooth system.
+,bluez-utils,are utilities used by bluez.
+,pasystray,is a pulse audio controller. 
