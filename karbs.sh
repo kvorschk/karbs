@@ -257,7 +257,7 @@ grep -q "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" /etc/conf.d/fluidsynth
 
 # This line, overwriting the `newperms` command above will allow the user to run
 # serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
-newperms %wheel ALL=(ALL) NOPASSWORD: ALL #KARBS
+newperms %wheel ALL=(ALL:ALL) NOPASSWORD: ALL #KARBS
 
 # Last message! Install complete!
 finalize
