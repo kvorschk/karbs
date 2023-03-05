@@ -1,5 +1,4 @@
 tag,Name in Repo,Purpose(word or phrase to sound right installing)
-,git,is the best thing ever written.
 ,xorg-server,is the graphical server. 
 ,xorg-xwininfo,allows collecting window information. 
 ,xorg-xinit,starts the graphical server.
