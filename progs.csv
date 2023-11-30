@@ -17,7 +17,7 @@ A,lf,is a terminal file manager.
 A,thunar-shares-plugin,allows non sudo file sharing from thunar.
 ,gvfs-smb,provides the cifs backend.
 ,xcompmgr,is the compositing manager.
-,xorg-xprop,is a tool for displaying window porperties.
+,xorg-xprop,is a tool for displaying window properties.
 ,arandr,makes multi monitor setup easy.
 ,dosfstool,is the notification system backend. 
 ,libnotify,is the notification system backend. 
